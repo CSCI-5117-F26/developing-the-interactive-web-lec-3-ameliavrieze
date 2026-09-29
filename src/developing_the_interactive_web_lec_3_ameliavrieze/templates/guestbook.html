@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <header>
+        <h1>
             Cats
-        </header>
+        </h1>
         <h2>by Amelia Vrieze</h2>
         <p>
             Yay cats!
@@ -11,19 +11,17 @@
             <h3>Sign the guest book</h3>
             <form action="/add" method="POST">
                 <label>Your Name</label>
-                <input type="text" id="name"><br>
+                <input type="text" id="name" name="name"><br>
                 <input type="submit"><br>
             </form>
 
             <ul>
-                (% for name in names %)
-                <li> {{name}} </li>
-                (% endfor %)
+                {% for name in names %}
+                    <li>{{name}}</li>
+                {% endfor %}
             </ul>
             
             
         </p>
     </body>
-
-
 </html>
