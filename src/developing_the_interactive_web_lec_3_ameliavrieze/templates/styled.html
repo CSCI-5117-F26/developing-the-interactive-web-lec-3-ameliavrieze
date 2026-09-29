@@ -1,10 +1,15 @@
-{% extends styled.html %}
-{% block title %} Title page {% endblock %}
-
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>{% block title %}</title>
+        <link rel="stylesheet" href="static/style.css">
+        {% block head %} {% endblock %}
+    </head>
     <body>
-        {% block body} hello from templates {% endblock %}
+        {% block body %} {% endblock %}
+        <nav>
+            <a href="{{url for('hello_world')}}">home</a>
+        </nav>
         <h1>
             Cats
         </h1>
@@ -18,12 +23,13 @@
                 <input type="text" id="name" name="name"><br>
                 <input type="submit"><br>
             </form>
-
+            {% if names}
             <ul>
                 {% for name in names %}
                     <li>{{name}}</li>
                 {% endfor %}
             </ul>
+            {% endif %}
             
             
         </p>
