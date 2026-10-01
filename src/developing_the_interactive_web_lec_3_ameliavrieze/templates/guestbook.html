@@ -1,16 +1,13 @@
 {% extends styled.html %}
-{% block title %} Title page {% endblock %}
 
-<!DOCTYPE html>
-<html>
-    <body>
-        {% block body} hello from templates {% endblock %}
+{% block body}
         <h1>
             Cats
         </h1>
         <h2>by Amelia Vrieze</h2>
         <p>
             Yay cats!
+        </p>
 
             <h3>Sign the guest book</h3>
             <form action="/add" method="POST">
@@ -24,8 +21,4 @@
                     <li>{{name}}</li>
                 {% endfor %}
             </ul>
-            
-            
-        </p>
-    </body>
-</html>
+{% endblock %}
