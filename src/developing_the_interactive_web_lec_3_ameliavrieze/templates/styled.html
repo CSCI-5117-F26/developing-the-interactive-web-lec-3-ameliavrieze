@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% block head %} 
         <title>{% block title %}</title>
         <link rel="stylesheet" href="static/style.css">
-        {% block head %} {% endblock %}
+        {% endblock %}
     </head>
     <body>
-        {% block body %} {% endblock %}
+        {% block body %} 
         <nav>
             <a href="{{url for('hello_world')}}">home</a>
         </nav>
@@ -31,7 +32,7 @@
             </ul>
             {% endif %}
             
-            
         </p>
+        {% endblock %}
     </body>
 </html>
